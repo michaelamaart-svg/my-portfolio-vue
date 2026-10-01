@@ -1,6 +1,5 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { RouterLink } from 'vue-router'
 
 const selectedCategory = ref('All')
 
@@ -33,7 +32,7 @@ const artworks = [
     title: 'Expressive Portrait',
     category: 'Portrait',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo_B1DmNuoJnGoh5kf-UhBnsM2a6aHLt3qDw&s',
-    caption: 'A portrait focused on facial expression, surrounded by drifting birds and suspended human figures. The minimal colour palette adds a calm and imaginative feeling.'
+    caption: 'A portrait focused on facial expression, surrounded by drifting birds and suspended human figures.'
   },
   {
     title: 'Futuristic Night Scene',
@@ -51,7 +50,7 @@ const artworks = [
     title: 'Soft Petal Portrait',
     category: 'Portrait',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzzWck-AZc4aZcjRb-QErGSXZbZz0Eybka4g&s',
-    caption: 'A calm portrait of a woman in a corset, with flower petals gently falling through the scene. The minimal expression and soft motion create an elegant mood.'
+    caption: 'A calm portrait of a woman in a corset, with flower petals gently falling through the scene.'
   },
   {
     title: 'Golden Sky Bridge',
@@ -105,43 +104,37 @@ const filteredArtworks = computed(() => {
     </div>
 
     <div class="gallery-filters">
-
       <button
-        @click="selectedCategory = 'All'"
-        :class="{ active: selectedCategory === 'All' }"
-        :aria-pressed="selectedCategory === 'All'"
         class="gallery-btn"
+        :class="{ active: selectedCategory === 'All' }"
+        @click="selectedCategory = 'All'"
       >
         All
       </button>
 
       <button
-        @click="selectedCategory = 'Landscape'"
-        :class="{ active: selectedCategory === 'Landscape' }"
-        :aria-pressed="selectedCategory === 'Landscape'"
         class="gallery-btn"
+        :class="{ active: selectedCategory === 'Landscape' }"
+        @click="selectedCategory = 'Landscape'"
       >
         Landscapes
       </button>
 
       <button
-        @click="selectedCategory = 'Portrait'"
-        :class="{ active: selectedCategory === 'Portrait' }"
-        :aria-pressed="selectedCategory === 'Portrait'"
         class="gallery-btn"
+        :class="{ active: selectedCategory === 'Portrait' }"
+        @click="selectedCategory = 'Portrait'"
       >
         Portraits
       </button>
 
       <button
-        @click="selectedCategory = 'Architecture'"
-        :class="{ active: selectedCategory === 'Architecture' }"
-        :aria-pressed="selectedCategory === 'Architecture'"
         class="gallery-btn"
+        :class="{ active: selectedCategory === 'Architecture' }"
+        @click="selectedCategory = 'Architecture'"
       >
         Architecture
       </button>
-
     </div>
 
     <div class="gallery-container">
@@ -168,14 +161,17 @@ const filteredArtworks = computed(() => {
             {{ artwork.caption }}
           </p>
         </div>
-
       </article>
 
     </div>
 
-    <RouterLink to="/#projects" class="btn">
+    <button
+      type="button"
+      class="btn gallery-back-button"
+      @click="$router.back()"
+    >
       Back to Projects
-    </RouterLink>
+    </button>
 
   </section>
 </template>

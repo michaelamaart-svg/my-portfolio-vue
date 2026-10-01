@@ -643,68 +643,164 @@ section p {
 }
 
 .recipe-page {
+  min-height: 100vh;
   padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   background: #05050f;
-  color: aliceblue;
 }
 
-.recipe-hero {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 50px;
-}
-
-.recipe-hero h1 {
-  font-size: 3rem;
-  margin: 15px 0;
-}
-
-.recipe-hero p {
-  color: #b8c1d1;
-}
-
-.recipe-box {
-  max-width: 600px;
-  margin: auto;
-  background: rgba(255,255,255,0.08);
-  padding: 35px;
-  border-radius: 20px;
-  text-align: center;
-}
-
-.recipe-box h2 {
-  margin-bottom: 25px;
-}
-
-.recipe-box input {
+.recipe-app {
   width: 100%;
-  padding: 15px;
-  border-radius: 10px;
+  max-width: 700px;
+  text-align: center;
+}
+
+.recipe-app h1 {
+  color: #4facfe;
+  font-size: 55px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px rgba(79, 172, 254, 0.5);
+}
+
+.recipe-subtitle {
+  color: #cccccc;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+.recipe-upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 180px;
+  padding: 20px;
+  background: #0d0d1a;
+  border: 1px dashed #4facfe;
+  border-radius: 12px;
+  color: #4facfe;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.recipe-upload input {
+  display: none;
+}
+
+.recipe-upload-image {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.recipe-remove {
+  margin-top: 12px;
+  padding: 8px 15px;
+  background: transparent;
+  border: 1px solid #555;
+  border-radius: 6px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.recipe-remove:hover {
+  border-color: #4facfe;
+  color: #4facfe;
+}
+
+.recipe-input {
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px;
+  background: #0d0d1a;
+  border: 1px solid #1c1c2c;
+  border-radius: 8px;
+  color: white;
+  outline: none;
+}
+
+.recipe-input:focus {
+  border-color: #4facfe;
+}
+
+.recipe-generate {
   border: none;
-  margin-bottom: 20px;
-  font-size: 1rem;
+  margin-top: 20px;
+  cursor: pointer;
 }
 
 .recipe-result {
-  max-width: 700px;
-  margin: 40px auto;
-  background: white;
-  color: black;
-  padding: 35px;
-  border-radius: 20px;
+  margin-top: 35px;
+  padding: 30px;
+  background: #0d0d1a;
+  border: 1px solid rgba(79, 172, 254, 0.3);
+  border-radius: 12px;
+  text-align: left;
 }
 
 .recipe-result h2 {
-  margin: 15px 0;
+  color: #4facfe;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .recipe-result h3 {
-  margin-top: 25px;
+  color: #4facfe;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .recipe-result p {
+  color: #cccccc;
+  line-height: 1.7;
+}
+
+.recipe-result ol {
+  padding-left: 20px;
+  color: #cccccc;
+}
+
+.recipe-result li {
+  margin-bottom: 10px;
   line-height: 1.6;
 }
+
+.recipe-back-button {
+  margin-top: 35px;
+}
+
+@media (max-width: 600px) {
+  .recipe-page {
+    padding: 60px 20px;
+  }
+
+  .recipe-app h1 {
+    font-size: 42px;
+  }
+
+  .recipe-subtitle {
+    font-size: 16px;
+  }
+
+  .recipe-upload {
+    min-height: 150px;
+  }
+
+  .recipe-upload-image {
+    height: 180px;
+  }
+
+  .recipe-result {
+    padding: 20px;
+  }
+}
+
 .foodboxx-page {
   min-height: 100vh;
   padding: 120px 60px;
@@ -893,6 +989,303 @@ section p {
   line-height: 1.6;
 }
 
+.restaurant-page {
+  min-height: 100vh;
+  padding: 20px;
+  background: #05050f;
+  color: white;
+}
+
+.restaurant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: rgba(10, 10, 20, 0.85);
+  border-bottom: 1px solid rgba(79, 172, 254, 0.4);
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.restaurant-header h1 {
+  color: #4facfe;
+  text-shadow: 0 0 10px #4facfe;
+  font-size: 35px;
+  letter-spacing: 2px;
+}
+
+.restaurant-header nav {
+  display: flex;
+  gap: 18px;
+}
+
+.restaurant-header nav a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.restaurant-header nav a:hover {
+  color: #4facfe;
+  text-shadow: 0 0 10px #4facfe;
+}
+
+.restaurant-hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.restaurant-hero-text {
+  max-width: 800px;
+  margin: auto;
+}
+
+.restaurant-hero p:first-child {
+  color: #4facfe;
+  letter-spacing: 2px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.restaurant-hero h2 {
+  font-size: 62px;
+  color: #4facfe;
+  text-shadow: 0 0 20px #4facfe;
+  margin-bottom: 15px;
+}
+
+.restaurant-hero p:last-child {
+  color: #ccc;
+  font-size: 23px;
+}
+
+.restaurant-about {
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.restaurant-about h2,
+.restaurant-menu > h2,
+.restaurant-reservation h2 {
+  color: #4facfe;
+  text-shadow: 0 0 10px rgba(79, 172, 254, 0.7);
+}
+
+.restaurant-about h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.restaurant-about p {
+  color: #aaa;
+  font-size: 18px;
+}
+
+.restaurant-menu {
+  padding: 70px 20px;
+}
+
+.restaurant-menu > h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 35px;
+}
+
+.restaurant-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.restaurant-menu-card {
+  background: #0f0f1a;
+  border: 1px solid rgba(79, 172, 254, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.restaurant-menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 18px rgba(79, 172, 254, 0.3);
+}
+
+.restaurant-menu-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.restaurant-menu-card h3 {
+  color: #4facfe;
+  font-size: 20px;
+  padding: 20px 15px 10px;
+}
+
+.restaurant-menu-card p {
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 0 20px 25px;
+}
+
+.restaurant-reservation {
+  max-width: 900px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.restaurant-reservation h2 {
+  font-size: 40px;
+  margin-bottom: 25px;
+}
+
+.restaurant-reservation-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  background: rgba(15, 15, 26, 0.8);
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(79, 172, 254, 0.3);
+  box-shadow: 0 0 20px rgba(79, 172, 254, 0.15);
+}
+
+.restaurant-form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.restaurant-form-group label {
+  margin-bottom: 6px;
+  color: #4facfe;
+  font-size: 16px;
+}
+
+
+.restaurant-reservation-form input:focus,
+.restaurant-reservation-form select:focus {
+  border-color: #4facfe;
+  box-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+}
+
+.restaurant-reservation-form input,
+.restaurant-reservation-form select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(79, 172, 254, 0.4);
+  background: #1a1a2a;
+  color: white;
+  outline: none;
+  font-size: 16px;
+}
+
+.restaurant-reservation-form input[type="date"],
+.restaurant-reservation-form input[type="time"] {
+  color-scheme: dark;
+}
+
+.restaurant-reservation-form input:focus,
+.restaurant-reservation-form select:focus {
+  border-color: #4facfe;
+  box-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+}
+
+.restaurant-reservation-form button {
+  grid-column: span 2;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1px solid #4facfe;
+  background: transparent;
+  color: #4facfe;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.restaurant-reservation-form button:hover {
+  background: #4facfe;
+  color: black;
+  box-shadow: 0 0 15px #4facfe;
+}
+
+.restaurant-footer {
+  text-align: center;
+  padding: 30px;
+  color: #777;
+}
+
+.restaurant-back-button {
+  display: block;
+  width: fit-content;
+  margin: 20px auto 40px;
+}
+
+.restaurant-message {
+  margin-top: 20px;
+  color: #4facfe;
+  font-size: 16px;
+  text-align: center;
+}
+
+.restaurant-reservation-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .restaurant-header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .restaurant-header h1 {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .restaurant-header nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .restaurant-header nav a {
+    font-size: 15px;
+  }
+
+  .restaurant-hero {
+    padding: 70px 20px;
+  }
+
+  .restaurant-hero h2 {
+    font-size: 42px;
+  }
+
+  .restaurant-hero p:last-child {
+    font-size: 17px;
+  }
+
+  .restaurant-menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .restaurant-reservation-form {
+    grid-template-columns: 1fr;
+  }
+
+  .restaurant-reservation-form button {
+    grid-column: span 1;
+  }
+}
+
 @media (max-width: 760px) {
   nav {
   padding: 20px;
@@ -996,26 +1389,501 @@ section p {
   grid-template-columns: 1fr;
 }
 
+/* Restaurant Project */
+
 .restaurant-page {
-  padding: 80px 25px;
+  min-height: 100vh;
+  background: #050505;
+  color: #f5f5f5;
 }
 
-.restaurant-page h1 {
-  font-size: 38px;
+.restaurant-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: rgba(5, 5, 5, 0.97);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
 }
 
-.restaurant-content {
-  grid-template-columns: 1fr;
+.restaurant-logo {
+  text-align: center;
+  line-height: 1;
 }
 
-.menu-container {
-  grid-template-columns: 1fr;
+.restaurant-logo span {
+  display: block;
+  color: #d4af37;
+  font-size: 12px;
+  letter-spacing: 5px;
 }
 
-.menu-section h2 {
-  font-size: 30px;
+.restaurant-logo h1 {
+  margin: 7px 0 0;
+  color: #ffffff;
+  font-family: Georgia, serif;
+  font-size: 22px;
+  font-weight: normal;
+  letter-spacing: 2px;
 }
 
-.reservation-section h2 {
-  font-size: 30px;
+.restaurant-header nav {
+  display: flex;
+  gap: 30px;
+}
+
+.restaurant-header nav a {
+  color: #eeeeee;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.restaurant-header nav a:hover {
+  color: #d4af37;
+}
+
+.restaurant-hero {
+  min-height: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.85)),
+    url("https://i.pinimg.com/1200x/5d/6c/7e/5d6c7e9d2f9d9a1f7b9a7f9b0f3e5d6c.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.restaurant-hero-content {
+  max-width: 800px;
+}
+
+.restaurant-small-title,
+.restaurant-section-label {
+  color: #d4af37;
+  font-size: 12px;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+.restaurant-hero h2 {
+  margin: 0 0 25px;
+  color: #ffffff;
+  font-family: Georgia, serif;
+  font-size: 72px;
+  font-weight: normal;
+  line-height: 1.05;
+}
+
+.restaurant-hero-content > p:not(.restaurant-small-title) {
+  max-width: 600px;
+  margin: 0 auto 35px;
+  color: #eeeeee;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.restaurant-hero-button {
+  display: inline-block;
+  padding: 14px 28px;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.restaurant-hero-button:hover {
+  background: #d4af37;
+  color: #050505;
+}
+
+.restaurant-about {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.restaurant-about h2 {
+  max-width: 700px;
+  margin: 0 auto 25px;
+  color: #ffffff;
+  font-family: Georgia, serif;
+  font-size: 45px;
+  font-weight: normal;
+}
+
+.restaurant-about-text {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #cccccc;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.restaurant-menu {
+  padding: 100px 40px;
+  background: #0c0c0c;
+}
+
+.restaurant-menu-heading {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.restaurant-menu-heading h2 {
+  margin: 0 0 15px;
+  color: #ffffff;
+  font-family: Georgia, serif;
+  font-size: 48px;
+  font-weight: normal;
+}
+
+.restaurant-menu-heading > p:last-child {
+  color: #bbbbbb;
+  font-size: 15px;
+}
+
+.restaurant-menu-grid {
+  max-width: 1150px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.restaurant-menu-card {
+  background: #050505;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  transition: 0.4s ease;
+}
+
+.restaurant-menu-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(212, 175, 55, 0.6);
+}
+
+.restaurant-image {
+  height: 320px;
+  overflow: hidden;
+}
+
+.restaurant-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: 0.5s ease;
+}
+
+.restaurant-menu-card:hover .restaurant-image img {
+  transform: scale(1.05);
+}
+
+.restaurant-menu-info {
+  padding: 28px 25px 32px;
+}
+
+.restaurant-dish-type {
+  color: #d4af37;
+  font-size: 10px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.restaurant-menu-info h3 {
+  margin: 0 0 15px;
+  color: #ffffff;
+  font-family: Georgia, serif;
+  font-size: 27px;
+  font-weight: normal;
+}
+
+.restaurant-menu-info p:last-child {
+  color: #bbbbbb;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.restaurant-experience {
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  text-align: center;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)),
+    url("https://i.pinimg.com/1200x/5d/6c/7e/5d6c7e9d2f9d9a1f7b9a7f9b0f3e5d6c.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.restaurant-experience-content {
+  max-width: 700px;
+}
+
+.restaurant-experience h2 {
+  margin: 0 0 20px;
+  color: #ffffff;
+  font-family: Georgia, serif;
+  font-size: 50px;
+  font-weight: normal;
+}
+
+.restaurant-experience-content > p:last-child {
+  color: #eeeeee;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.restaurant-reservation {
+  max-width: 950px;
+  margin: auto;
+  padding: 110px 20px;
+  text-align: center;
+}
+
+.restaurant-reservation-heading {
+  margin-bottom: 45px;
+}
+
+.restaurant-reservation-heading h2 {
+  margin: 0 0 15px;
+  color: #ffffff;
+  font-family: Georgia, serif;
+  font-size: 48px;
+  font-weight: normal;
+}
+
+.restaurant-reservation-heading > p:last-child {
+  color: #bbbbbb;
+  font-size: 15px;
+}
+
+.restaurant-reservation-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 35px;
+  background: #0c0c0c;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.restaurant-form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.restaurant-form-group label {
+  margin-bottom: 8px;
+  color: #d4af37;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.restaurant-reservation-form input,
+.restaurant-reservation-form select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  background: #050505;
+  border: 1px solid #333333;
+  border-radius: 0;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+}
+
+.restaurant-reservation-form input::placeholder {
+  color: #777777;
+}
+
+.restaurant-reservation-form input:focus,
+.restaurant-reservation-form select:focus {
+  border-color: #d4af37;
+}
+
+.restaurant-reservation-form input[type="date"],
+.restaurant-reservation-form input[type="time"] {
+  color-scheme: dark;
+}
+
+.restaurant-reservation-form input[type="date"]::-webkit-calendar-picker-indicator,
+.restaurant-reservation-form input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(75%) sepia(30%) saturate(500%);
+  cursor: pointer;
+}
+
+.restaurant-guests {
+  grid-column: span 2;
+}
+
+.restaurant-reservation-form button {
+  grid-column: span 2;
+  padding: 15px;
+  margin-top: 10px;
+  background: #d4af37;
+  border: 1px solid #d4af37;
+  color: #050505;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.restaurant-reservation-form button:hover {
+  background: transparent;
+  color: #d4af37;
+}
+
+.restaurant-reservation-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.reservation-message {
+  margin-top: 25px;
+  color: #d4af37;
+  font-size: 15px;
+}
+
+.restaurant-footer {
+  padding: 70px 20px 30px;
+  text-align: center;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  background: #050505;
+}
+
+.restaurant-footer-logo span {
+  color: #d4af37;
+  font-size: 11px;
+  letter-spacing: 5px;
+}
+
+.restaurant-footer-logo h2 {
+  margin: 8px 0 20px;
+  color: #ffffff;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+.restaurant-footer > p {
+  color: #888888;
+  font-size: 14px;
+}
+
+.restaurant-copyright {
+  margin-top: 35px;
+  font-size: 12px !important;
+}
+
+.restaurant-back-button {
+  margin-top: 25px;
+  background: transparent;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+}
+
+.restaurant-back-button:hover {
+  background: #d4af37;
+  color: #050505;
+}
+
+
+@media (max-width: 768px) {
+
+  .restaurant-header {
+    position: relative;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .restaurant-header nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .restaurant-hero {
+    min-height: 600px;
+    padding: 60px 20px;
+  }
+
+  .restaurant-hero h2 {
+    font-size: 48px;
+  }
+
+  .restaurant-hero-content > p:not(.restaurant-small-title) {
+    font-size: 16px;
+  }
+
+  .restaurant-about {
+    padding: 80px 20px;
+  }
+
+  .restaurant-about h2 {
+    font-size: 36px;
+  }
+
+  .restaurant-menu {
+    padding: 80px 20px;
+  }
+
+  .restaurant-menu-heading h2 {
+    font-size: 38px;
+  }
+
+  .restaurant-menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .restaurant-image {
+    height: 280px;
+  }
+
+  .restaurant-experience {
+    min-height: 400px;
+  }
+
+  .restaurant-experience h2 {
+    font-size: 38px;
+  }
+
+  .restaurant-reservation {
+    padding: 80px 20px;
+  }
+
+  .restaurant-reservation-heading h2 {
+    font-size: 38px;
+  }
+
+  .restaurant-reservation-form {
+    grid-template-columns: 1fr;
+    padding: 25px;
+  }
+
+  .restaurant-guests {
+    grid-column: span 1;
+  }
+
+  .restaurant-reservation-form button {
+    grid-column: span 1;
+  }
 }
